@@ -18,7 +18,7 @@ export const Contact: React.FC = () => {
     setIsSending(true);
     setStatusMsg(null);
 
-    const accessKey = (import.meta as unknown as { env: Record<string, string> }).env?.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE';
+    const accessKey = (import.meta as unknown as { env: Record<string, string> }).env?.VITE_WEB3FORMS_ACCESS_KEY || 'e51bfd54-a4d5-4192-8b3d-3f46b57fe7ce';
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
