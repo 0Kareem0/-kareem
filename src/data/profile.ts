@@ -20,7 +20,7 @@ export const PROFILE_DATA: ProfileInfo = {
   skills: [
     {
       category: 'Languages',
-      items: ['TypeScript', 'JavaScript (ESNext)', 'HTML5 / CSS3', 'Python', 'SQL', 'C / Bash (Exploring)']
+      items: ['TypeScript', 'JavaScript (ESNext)', 'HTML5 / CSS3','SQL', 'Bash (Exploring)']
     },
     {
       category: 'Frontend & Frameworks',
