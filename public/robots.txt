@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kareem.dev/sitemap.xml
