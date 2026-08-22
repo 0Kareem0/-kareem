@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AsciiArt } from '../components/AsciiArt';
 import { PROFILE_DATA } from '../data/profile';
-import { Terminal, Shield, Cpu, BookOpen, Heart, FileText, CheckCircle2 } from 'lucide-react';
+import { Terminal, Shield, Cpu, BookOpen, Heart, FileText, CheckCircle2, Music } from 'lucide-react';
 
 export const About: React.FC = () => {
   const [viewRaw, setViewRaw] = useState(false);
@@ -229,6 +229,24 @@ TEXT = "Code is a medium for thought. Build stuff that works fast, looks distinc
               </div>
             </div>
           </div>
+
+          {/* Audio Playlist & Favorite Tracks Card */}
+          {PROFILE_DATA.audioPlaylist && (
+            <div className="retro-card p-6 space-y-4 border-terminal-cyan/30">
+              <div className="flex items-center space-x-2 text-xs text-terminal-cyan font-bold border-b border-void-800 pb-3">
+                <Music className="w-4 h-4" />
+                <span>AUDIO_PLAYLIST // FAVORITE_TRACKS</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {PROFILE_DATA.audioPlaylist.map((track, i) => (
+                  <div key={i} className="p-3 bg-void-900 border border-void-800 hover:border-terminal-cyan/50 rounded flex items-center space-x-3 transition">
+                    <span className="p-1.5 bg-terminal-cyan/10 border border-terminal-cyan/30 text-terminal-cyan rounded text-xs">🎵</span>
+                    <span className="text-xs text-retro-text font-mono truncate">{track}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

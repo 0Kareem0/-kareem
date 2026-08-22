@@ -47,9 +47,9 @@ export const NOW_DATA: NowStatus = {
     'Modern Web Security & OWASP Top 10 vulnerabilities'
   ],
   listeningTo: [
-    'Lorn - Acid Rain / Anvil',
-    'Synthwave & Cyberpunk Ambient (Master Boot Record, Perturbator)',
-    'Lo-Fi Coding Beats & Low Frequency Dark Ambient'
+    'Mr.Kitty - After Dark',
+    'All I Need - Radiohead',
+    'The Marías - No One Noticed'
   ],
   systemLogSnippet: [
     '[08:59:12] SYS_INIT: Booting Kareem OS Kernel v6.12.0...',

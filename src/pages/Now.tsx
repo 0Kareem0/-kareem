@@ -102,22 +102,6 @@ export const Now: React.FC = () => {
             </ul>
           </div>
 
-          {/* Audio & Music Playlist */}
-          <div className="retro-card p-6 space-y-4">
-            <div className="flex items-center space-x-2 text-xs text-terminal-purple font-bold border-b border-void-800 pb-3">
-              <Music className="w-4 h-4" />
-              <span>AUDIO_PLAYLIST</span>
-            </div>
-            <ul className="space-y-2 text-xs text-retro-muted">
-              {NOW_DATA.listeningTo.map((track, idx) => (
-                <li key={idx} className="p-2 bg-void-900 border border-void-800 rounded flex items-center space-x-2">
-                  <span className="text-terminal-purple font-bold">🎵</span>
-                  <span>{track}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Live System Log Snippet */}
           <div className="retro-card p-6 space-y-3 bg-void-950">
             <div className="flex items-center space-x-2 text-xs text-terminal-green font-bold border-b border-void-800 pb-2">

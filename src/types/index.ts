@@ -34,6 +34,7 @@ export interface ProfileInfo {
   }[];
   currentlyLearning: string[];
   avatarUrl?: string;
+  audioPlaylist?: string[];
   socials: {
     name: string;
     url: string;

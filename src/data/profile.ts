@@ -42,6 +42,12 @@ export const PROFILE_DATA: ProfileInfo = {
     'Cyber Security CTFs & Network Security'
   ],
   avatarUrl: 'https://avatars.githubusercontent.com/u/102608397?v=4',
+  audioPlaylist: [
+    'Mr.Kitty - After Dark',
+    'All I Need - Radiohead',
+    'The Marías - No One Noticed',
+    'SYML - Fear of the Water'
+  ],
   socials: [
     {
       name: 'GitHub',
