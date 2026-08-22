@@ -1,6 +1,6 @@
 import React from 'react';
 import { NOW_DATA } from '../data/now';
-import { Clock, Activity, Cpu, Music, BookOpen, Layers, Terminal } from 'lucide-react';
+import { Clock, Activity, Cpu, BookOpen, Layers, Terminal, Monitor } from 'lucide-react';
 
 export const Now: React.FC = () => {
   return (
@@ -100,6 +100,32 @@ export const Now: React.FC = () => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Workstation & Environment Specs */}
+          <div className="retro-card p-6 space-y-4">
+            <div className="flex items-center space-x-2 text-xs text-terminal-cyan font-bold border-b border-void-800 pb-3">
+              <Monitor className="w-4 h-4" />
+              <span>WORKSTATION_&_SETUP</span>
+            </div>
+            <div className="space-y-2 text-xs font-mono">
+              <div className="flex justify-between items-center p-2 bg-void-900 border border-void-800 rounded">
+                <span className="text-retro-muted">OS:</span>
+                <span className="text-terminal-green font-bold">Linux (Custom Kernel)</span>
+              </div>
+              <div className="flex justify-between items-center p-2 bg-void-900 border border-void-800 rounded">
+                <span className="text-retro-muted">SHELL:</span>
+                <span className="text-terminal-cyan">Zsh / Bash + Starship</span>
+              </div>
+              <div className="flex justify-between items-center p-2 bg-void-900 border border-void-800 rounded">
+                <span className="text-retro-muted">EDITOR:</span>
+                <span className="text-terminal-amber">VS Code + JetBrains Mono</span>
+              </div>
+              <div className="flex justify-between items-center p-2 bg-void-900 border border-void-800 rounded">
+                <span className="text-retro-muted">STACK:</span>
+                <span className="text-retro-text">React + TS + Vite + Tailwind</span>
+              </div>
+            </div>
           </div>
 
           {/* Live System Log Snippet */}
