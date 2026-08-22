@@ -20,6 +20,11 @@ export const Contact: React.FC = () => {
 
     const accessKey = (import.meta as unknown as { env: Record<string, string> }).env?.VITE_WEB3FORMS_ACCESS_KEY || 'e51bfd54-a4d5-4192-8b3d-3f46b57fe7ce';
 
+    // Validate email format required by Web3Forms
+    const inputEmail = formData.handleOrEmail.trim();
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputEmail);
+    const senderEmail = isValidEmail ? inputEmail : 'visitor@kareem-portfolio.dev';
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -30,8 +35,8 @@ export const Contact: React.FC = () => {
         body: JSON.stringify({
           access_key: accessKey,
           name: formData.name,
-          email: formData.handleOrEmail || 'visitor@kareem-portfolio.dev',
-          message: formData.message,
+          email: senderEmail,
+          message: `${formData.message}${!isValidEmail && inputEmail ? `\n\n[Sender Contact Handle]: ${inputEmail}` : ''}`,
           subject: `Portfolio Transmission from ${formData.name}`,
           from_name: 'Kareem Terminal Dispatch',
         }),
@@ -44,14 +49,11 @@ export const Contact: React.FC = () => {
         setStatusMsg('SUCCESS: Transmission packet sent directly to Kareem\'s inbox! Will respond shortly.');
         setFormData({ name: '', handleOrEmail: '', message: '' });
       } else {
-        // If key is demo or unconfigured
-        setStatusMsg(`SUCCESS: Packet transmitted! (Note: Get a free key at web3forms.com & add VITE_WEB3FORMS_ACCESS_KEY to .env to receive emails in your inbox).`);
-        setFormData({ name: '', handleOrEmail: '', message: '' });
+        setStatusMsg(`ERR: ${result.message || 'Transmission refused by Web3Forms API.'}`);
       }
     } catch {
       setIsSending(false);
-      setStatusMsg('SUCCESS: Packet queued for dispatch! (Network simulation ready).');
-      setFormData({ name: '', handleOrEmail: '', message: '' });
+      setStatusMsg('ERR: Network connection error. Could not connect to dispatch server.');
     }
   };
 
